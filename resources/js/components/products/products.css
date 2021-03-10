@@ -1,0 +1,134 @@
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+
+}
+
+
+
+.unselectable {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #cc0000;
+  }
+
+.like{
+    animation: like-clicked 1s;
+    padding: 10px;
+}
+
+.icon-shadow{
+  filter: drop-shadow(2px 3px 1px rgba(94, 98, 104, 0.391));
+  padding: 10px;
+}
+
+@keyframes like-clicked {
+  /* You could think of as "step 1" */
+  0%{
+    transform: rotate(-45deg);
+  }
+  100%{
+    transform: rotate(0deg);
+    
+  }
+}
+
+
+.reaction{
+    display: flex;
+    justify-content: space-around;
+}
+
+  .share{
+    filter: drop-shadow(3px 3px 1px rgb(3, 141, 107));
+  }
+
+
+  .card{
+    text-align:center;
+    background-color:'#ddd';
+    margin:'20px auto';
+    width:'fit-content';
+  }
+
+
+  .alert-main{
+      position: fixed;
+      width: 50%;
+      color: rgb(228, 228, 228);
+      background-color: rgb(40, 3, 61);
+      border-radius: 6px;
+      border: 3px solid rgb(149, 114, 177);
+      text-align: center;
+      font-size: larger;
+      left:50%;
+      padding: 4px 7px;
+      top:-100px;
+      margin-left: -25%;
+      height: fit-content;
+      z-index: 1000;
+      background: rgb(46, 2, 150);
+      display: none;
+  }
+
+  .social-list{
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin: auto;
+    z-index: 10000;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow:0 3px 107px rgb(77, 77, 77);
+    left:50%;
+    margin-left: -45%;
+    top:16%;
+  }
+  .none{
+    display: none;
+  }
+
+  .social-list div{
+   margin: 10px 0;
+  }
+
+  .carder{
+    bottom:0;
+    left:50%;
+    height: 101vh;
+    top:5px;
+    box-shadow: 0 0 20px #000;
+    margin-left:-47vw;
+    border:2px solid rgba(51, 7, 7, 0.603);
+    border-radius: 10px;
+    z-index: 10000;
+    overflow-y: auto;
+    overflow-x:hidden;
+    border-bottom-left-radius:0 ;
+    width: 94vw;
+    border-bottom-right-radius:0 ;
+    position: fixed;
+    display: none;
+    background-color: aliceblue;
+  }
+
+  .btn-cls{
+    position: fixed;
+    background: rgb(100, 133, 223);
+    border-radius: 50%;
+    right:5%;
+    top:3%;
+    z-index: 1000000;
+  }
+
+ .carder::-webkit-scrollbar{
+   display: none;
+ }
+
+ .carder{
+   scrollbar-width: 0;
+ }
