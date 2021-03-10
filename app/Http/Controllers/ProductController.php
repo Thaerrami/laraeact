@@ -27,7 +27,7 @@ class ProductController extends Controller
                    Product::create([
                        'title'=>$request->title,
                        'description'=>$request->description,
-                       'img'=>$img
+                       'img'=>'/storage/'.$img
                    ]);
 
                    return 202;
@@ -56,7 +56,7 @@ class ProductController extends Controller
                   }
 
                    $img = request()->img->store('images', 'public');
-                   $data['img']=$img;
+                   $data['img']='/storage/'.$img;
         }
 
         if(request()->title !== null){
@@ -67,11 +67,14 @@ class ProductController extends Controller
             $data['description']=request()->description;
         }
 
+        
         Product::find($id)->update($data);
 
         return  $img ;
     }
 
+
+    
 
     public function removeProduct($id){
         Product::find($id)->delete();
@@ -110,11 +113,13 @@ public function dislikeProduct($id){
 
 
 public function getSingleProduct($id){
-    $product=Product::where('id',$id);
-    dd($product->get());
+    $product=Product::where('id',$id)->first();
 
     return view('singleproduct')->with(['product'=>$product]);
 }
+
+
+
 
 }
 

@@ -14,3 +14,4 @@ require('./bootstrap');
 
 require('./components/products/Products');
 require('./components/edit/Show');
+require('./components/like');

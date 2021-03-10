@@ -35,7 +35,7 @@ function Show() {
   </thead>
   <tbody>
       {products.map((product,i)=><tr key={i}>
-      <td><img width='100px' id='img-prd-list' src={'/storage/'+product.img} /></td>
+      <td><img width='100px' id='img-prd-list' src={product.img} /></td>
       <td>{product.title}</td>
       <td>{product.description}</td>
       <td><span className='like'>{product.likes}<span> <Like sign={product.likes}  /> </span></span></td>

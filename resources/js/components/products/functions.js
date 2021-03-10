@@ -2,7 +2,9 @@ import $ from 'jquery';
 import axios from 'axios'
 
 export function geturl(){
-    return window.location.protocol+'//'+window.location.hostname+':'+window.location.port+'/api/';
+    var port =''
+    window.location.port!==null? port=':'+window.location.port:''
+    return window.location.protocol+'//'+window.location.hostname+port+'/api/';
 }
 
 
@@ -53,9 +55,9 @@ export function handleshare(id){
 }
 
 
-export function setpopup({...data}){
+export function setpopup({...data}){ 
     $('#card').show('slow');
-    $('#prod-card-img').attr('src','/storage/'+data.img)
+    $('#prod-card-img').attr('src',data.img)
     $('#prod-card-title').text(data.title)
     $('#prod-card-desc').text(data.desc);
 }
@@ -71,8 +73,9 @@ export function stopscroll(){
 
 export async function getdata(){
 try{
-    return await axios('http://localhost:8000/api/prodcuts/')
+    return await axios(geturl()+'prodcuts/')
 }catch(error){
+    // console.log(error)
 return '500';
 }
 return '404';

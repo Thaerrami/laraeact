@@ -3,14 +3,16 @@ import axios from "axios";
 import $ from 'jquery';
 
 export  function geturl(){
-    return window.location.protocol+'//'+window.location.hostname+':'+window.location.port
+    var port =''
+    window.location.port!==null? port=':'+window.location.port:''
+    return window.location.protocol+'//'+window.location.hostname+port+'/api/';
 }
 
 export function deleteprd(id){
     var id=$('#dlt-data').val();
     // alert(id)
 
-    axios.delete('http://localhost:8000/api/delete/'+id)
+    axios.delete(geturl()+'delete/'+id)
     .then(res => {
       console.log(res);
       console.log(res.data);
@@ -26,7 +28,7 @@ export  async function handleupdate(data){
 // alert(id)
 console.log(data)
     try{
-    const res=await axios.post('http://localhost:8000/api/update/'+id, data,{
+    const res=await axios.post(geturl()+'update/'+id, data,{
         onUploadProgress:ProgressEvent=>{
             console.log(Math.round(ProgressEvent.loaded/ProgressEvent.total * 100)+'%')
         }
