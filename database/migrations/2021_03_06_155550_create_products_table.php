@@ -17,8 +17,8 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('title')->require();
             $table->string('description')->require();
-            $table->integer('likes')->require();
-            $table->string('img')->require();
+            $table->integer('likes')->default(0);
+            $table->string('img')->nullable();
             $table->timestamps();
         });
     }
