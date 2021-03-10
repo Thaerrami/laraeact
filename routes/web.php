@@ -22,14 +22,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/products', 'productController@showAllProducts')->name('products');
+Route::get('/products', 'ProductController@showAllProducts')->name('products');
 
 Route::post('product/{id}', 'ProductController@showProduct');
 
 
 Route::middleware('auth')->group(function () {
-    Route::post('/addproduct', 'productController@addProdut')->name('addproduct');
-    Route::get('/addproduct', 'productController@addProdutview')->name('addproduct');
+    Route::post('/addproduct', 'ProductController@addProdut')->name('addproduct');
+    Route::get('/addproduct', 'ProductController@addProdutview')->name('addproduct');
     
     Route::get('/edit',function(){
         return view('editview');

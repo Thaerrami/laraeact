@@ -31,12 +31,12 @@ Route::post('likeproduct/{id}', 'ProductController@likeProduct');
 Route::post('dislikeproduct/{id}', 'ProductController@dislikeProduct');
 
 
-Route::get('/prodcuts','productController@getAllProducts');
+Route::get('/prodcuts','ProductController@getAllProducts');
 
-Route::any('/delete/{id}','productController@deleteProduct');
+Route::any('/delete/{id}','ProductController@deleteProduct');
 
 
-Route::any('/update/{id}','productController@updateProduct');
+Route::any('/update/{id}','ProductController@updateProduct');
 
 
 
